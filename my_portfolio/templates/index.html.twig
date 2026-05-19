@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Hero Section -->
+    <section id="hero" class="h-screen flex items-center justify-center px-6">
+        <div class="text-center">
+            <h2 class="text-indigo-400 font-mono mb-4">Hello, je suis</h2>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter">KEVIN <span class="text-indigo-600">SCHNIDER</span></h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto">Développeur Fullstack spécialisé dans la conception d'architectures robustes et d'APIs performantes.</p>
+        </div>
+    </section>
+
+    <!-- Stack -->
+    <section id="stack" class="py-24 bg-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-16 underline decoration-indigo-500 underline-offset-8">Ma Stack</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="p-8 bg-slate-900 rounded-2xl border border-slate-700 shadow-xl">Symfony</div>
+                <div class="p-8 bg-slate-900 rounded-2xl border border-slate-700 shadow-xl">PostgreSQL</div>
+                <div class="p-8 bg-slate-900 rounded-2xl border border-slate-700 shadow-xl">Docker</div>
+                <div class="p-8 bg-slate-900 rounded-2xl border border-slate-700 shadow-xl">Redis</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12">Compétences</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold text-indigo-400">Hard Skills</h3>
+                    <p class="text-gray-400">Architecture API REST, Modélisation SQL, Sécurité JWT, Docker & CI/CD.</p>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold text-indigo-400">Soft Skills</h3>
+                    <p class="text-gray-400">Autonomie, Rigueur technique, Curiosité technologique, Esprit d'équipe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-slate-800/30 italic text-gray-400 text-center">Section Projets en cours de développement...</section>
+
+    <section id="contact" class="py-24 max-w-2xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center">Me contacter</h2>
+        <form class="space-y-4">
+            <input type="text" placeholder="Nom" class="w-full p-4 bg-slate-800 rounded-lg outline-none focus:ring-2 ring-indigo-500 transition">
+            <textarea placeholder="Message" rows="5" class="w-full p-4 bg-slate-800 rounded-lg outline-none focus:ring-2 ring-indigo-500 transition"></textarea>
+            <button class="w-full py-4 bg-indigo-600 font-bold rounded-lg hover:bg-indigo-500 transition shadow-lg shadow-indigo-500/20">Envoyer l'email</button>
+        </form>
+    </section>
+{% endblock %}
