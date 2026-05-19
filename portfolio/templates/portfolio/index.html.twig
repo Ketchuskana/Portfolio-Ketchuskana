@@ -1,0 +1,215 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero" class="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden">
+        <!-- Background animated elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative text-center max-w-4xl">
+            <div class="mb-6">
+                <span class="px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-sm font-semibold inline-block">Bienvenue sur mon portfolio</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400">
+                {{ name|upper }}
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-4 font-light">Développeur Backend Fullstack</p>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-12">
+                Je conçois des architectures logicielles robustes et des APIs performantes. Passionné par l'excellence technique et les bonnes pratiques.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#stack" class="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg font-bold hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 hover:-translate-y-1">Découvrir mon stack</a>
+                <a href="#contact" class="px-8 py-4 border-2 border-indigo-500 rounded-lg font-bold text-indigo-400 hover:bg-indigo-500/10 transition-all duration-300">Me contacter</a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ===== STACK SECTION ===== -->
+    <section id="stack" class="py-32 px-6 relative">
+        <div class="absolute inset-0 overflow-hidden -z-10">
+            <div class="absolute top-1/2 -right-40 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Ma Stack Technologique</h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">Les technologies et outils que j'utilise pour construire des solutions backend performantes et scalables</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-xl hover:border-indigo-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20 hover:-translate-y-1">
+                    <h3 class="text-xl font-bold text-indigo-400 mb-4">Backend</h3>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>✓ Symfony / Doctrine ORM</li>
+                        <li>✓ API REST / GraphQL</li>
+                        <li>✓ JWT Authentication</li>
+                    </ul>
+                </div>
+
+                <div class="group p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-xl hover:border-indigo-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20 hover:-translate-y-1">
+                    <h3 class="text-xl font-bold text-indigo-400 mb-4">Bases de Données</h3>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>✓ PostgreSQL</li>
+                        <li>✓ MongoDB</li>
+                        <li>✓ Redis Cache</li>
+                    </ul>
+                </div>
+
+                <div class="group p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-xl hover:border-indigo-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20 hover:-translate-y-1">
+                    <h3 class="text-xl font-bold text-indigo-400 mb-4">DevOps & Tools</h3>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>✓ Docker & Compose</li>
+                        <li>✓ Git / GitHub</li>
+                        <li>✓ CI/CD Pipelines</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section id="skills" class="py-32 px-6 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Compétences Professionnelles</h2>
+                <p class="text-gray-400 text-lg">Hard skills et soft skills qui me permettent de livrer des projets de qualité</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="p-8 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 rounded-xl">
+                    <h3 class="text-2xl font-bold text-indigo-400 mb-6">Hard Skills</h3>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li>• Architecture Backend & Design d'APIs scalables</li>
+                        <li>• SQL avancé et optimisation de requêtes</li>
+                        <li>• Authentication JWT, OAuth et CORS</li>
+                        <li>• Containerization & CI/CD pipelines</li>
+                        <li>• Unit et integration testing</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 border border-purple-500/20 rounded-xl">
+                    <h3 class="text-2xl font-bold text-purple-400 mb-6">Soft Skills</h3>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li>• Communication technique claire</li>
+                        <li>• Autonomie et résolution de problèmes</li>
+                        <li>• Rigueur technique et best practices</li>
+                        <li>• Travail en équipe agile</li>
+                        <li>• Veille tech et innovation continue</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section id="projects" class="py-32 px-6 relative">
+        <div class="absolute inset-0 overflow-hidden -z-10">
+            <div class="absolute bottom-0 -left-40 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Projets Réalisés</h2>
+                <p class="text-gray-400 text-lg">Quelques projets qui démontrent mon expertise</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-xl hover:border-indigo-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20">
+                    <h3 class="text-lg font-bold text-white mb-2">API E-Commerce</h3>
+                    <p class="text-gray-400 text-sm mb-4">REST API complète avec gestion de produits et commandes</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full">Symfony</span>
+                        <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="group relative p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-xl hover:border-indigo-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20">
+                    <h3 class="text-lg font-bold text-white mb-2">Dashboard Analytics</h3>
+                    <p class="text-gray-400 text-sm mb-4">Monitoring et analytics avec Redis cache</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">Redis</span>
+                        <span class="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">Docker</span>
+                    </div>
+                </div>
+
+                <div class="group relative p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-xl hover:border-indigo-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20">
+                    <h3 class="text-lg font-bold text-white mb-2">Système File Upload</h3>
+                    <p class="text-gray-400 text-sm mb-4">Upload sécurisé avec compression optimisée</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full">Symfony</span>
+                        <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full">S3 Storage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="py-32 px-6 relative bg-slate-900/50">
+        <div class="absolute inset-0 overflow-hidden -z-10">
+            <div class="absolute top-1/2 -right-40 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Prenons Contact</h2>
+                <p class="text-gray-400 text-lg">Vous avez un projet? Je serais ravi de discuter avec vous</p>
+            </div>
+
+            <div class="p-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-2xl">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-indigo-400 mb-2">Votre nom</label>
+                            <input type="text" placeholder="Jean Dupont" class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 text-white placeholder-gray-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-indigo-400 mb-2">Votre email</label>
+                            <input type="email" placeholder="jean@example.com" class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 text-white placeholder-gray-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-indigo-400 mb-2">Sujet</label>
+                        <input type="text" placeholder="Projet web, consultation..." class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 text-white placeholder-gray-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-indigo-400 mb-2">Message</label>
+                        <textarea placeholder="Décrivez votre projet..." rows="6" class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 text-white placeholder-gray-500 resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg font-bold text-white hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 hover:-translate-y-1">
+                        Envoyer le message
+                    </button>
+                </form>
+            </div>
+
+            <div class="mt-16 grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <h3 class="font-semibold text-white mb-1">Email</h3>
+                    <p class="text-gray-400 text-sm">contact@example.com</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-white mb-1">Localisation</h3>
+                    <p class="text-gray-400 text-sm">France</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-white mb-1">Portfolio</h3>
+                    <p class="text-gray-400 text-sm">github.com/username</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
