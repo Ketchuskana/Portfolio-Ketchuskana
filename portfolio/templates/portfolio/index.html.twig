@@ -1,215 +1,400 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <!-- ===== HERO SECTION ===== -->
-    <section id="hero" class="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden">
-        <!-- Background animated elements -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-40 -right-40 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
-            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-        </div>
 
-        <div class="relative text-center max-w-4xl">
-            <div class="mb-6">
-                <span class="px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-sm font-semibold inline-block">Bienvenue sur mon portfolio</span>
-            </div>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400">
-                {{ name|upper }}
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-4 font-light">Développeur Backend Fullstack</p>
-            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-12">
-                Je conçois des architectures logicielles robustes et des APIs performantes. Passionné par l'excellence technique et les bonnes pratiques.
+{# ════════════════════════════════════════════
+   HERO
+════════════════════════════════════════════ #}
+<section id="hero" class="min-h-screen flex items-center justify-center px-6 pt-24 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay:1.2s"></div>
+    </div>
+
+    <div class="relative text-center max-w-4xl reveal">
+        <div class="mb-6">
+            <span class="px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-sm font-semibold">
+                Bienvenue sur mon portfolio
+            </span>
+        </div>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-5 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400">
+            {{ name|upper }}
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-4 font-light">Développeuse Fullstack — Symfony / React</p>
+        <p class="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12">
+            Je conçois des interfaces soignées et des architectures back-end robustes. Passionnée par l'excellence technique et les bonnes pratiques.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#stack"
+               class="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg font-bold hover:shadow-lg hover:shadow-indigo-500/40 transition-all duration-300 hover:-translate-y-1">
+                Découvrir ma stack
+            </a>
+            <a href="{{ asset('cv/CV_PRO_SONESSOMEMOUKOURI-Ketchuskana.pdf') }}" download
+               class="px-8 py-4 border-2 border-indigo-500 rounded-lg font-bold text-indigo-400 hover:bg-indigo-500/10 transition-all duration-300 flex items-center gap-2 justify-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                Télécharger mon CV
+            </a>
+        </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+    </div>
+</section>
+
+{# ════════════════════════════════════════════
+   STACK — grille de logos
+════════════════════════════════════════════ #}
+<section id="stack" class="py-28 px-6 relative">
+    <div class="absolute inset-0 -z-10">
+        <div class="absolute top-1/2 -right-40 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <h2 class="text-4xl md:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                Ma Stack Technologique
+            </h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                Les technologies avec lesquelles je construis des solutions web performantes
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#stack" class="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg font-bold hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 hover:-translate-y-1">Découvrir mon stack</a>
-                <a href="#contact" class="px-8 py-4 border-2 border-indigo-500 rounded-lg font-bold text-indigo-400 hover:bg-indigo-500/10 transition-all duration-300">Me contacter</a>
+        </div>
+
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-5 reveal">
+            {% set techs = [
+                { name:'HTML5',      icon:'html5/html5-original.svg',               invert:false },
+                { name:'CSS3',       icon:'css3/css3-original.svg',                 invert:false },
+                { name:'JavaScript', icon:'javascript/javascript-original.svg',     invert:false },
+                { name:'PHP',        icon:'php/php-original.svg',                   invert:false },
+                { name:'Symfony',    icon:'symfony/symfony-original.svg',           invert:true  },
+                { name:'React',      icon:'react/react-original.svg',               invert:false },
+                { name:'React Native',icon:'react/react-original.svg',             invert:false },
+                { name:'TailwindCSS',icon:'tailwindcss/tailwindcss-original.svg',  invert:false },
+                { name:'Bootstrap',  icon:'bootstrap/bootstrap-original.svg',       invert:false },
+                { name:'WordPress',  icon:'wordpress/wordpress-original.svg',       invert:false },
+                { name:'MySQL',      icon:'mysql/mysql-original.svg',               invert:false },
+                { name:'MongoDB',    icon:'mongodb/mongodb-original.svg',           invert:false },
+                { name:'Git',        icon:'git/git-original.svg',                   invert:false },
+                { name:'Prisma',     icon:'prisma/prisma-original.svg',             invert:true  }
+            ] %}
+            {% for tech in techs %}
+            <div class="flex flex-col items-center gap-3 p-4 rounded-xl bg-slate-800/30 border border-slate-700/40
+                        hover:border-indigo-500/50 hover:-translate-y-1 hover:bg-slate-800/60
+                        transition-all duration-300 group">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/{{ tech.icon }}"
+                     class="w-10 h-10 group-hover:scale-110 transition-transform duration-300{% if tech.invert %} invert{% endif %}"
+                     alt="{{ tech.name }}" loading="lazy">
+                <span class="text-xs text-gray-400 group-hover:text-indigo-300 transition-colors text-center leading-tight">
+                    {{ tech.name }}
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{# ════════════════════════════════════════════
+   SKILLS — canvas wave (mariandev-inspired)
+════════════════════════════════════════════ #}
+<section id="skills" class="py-28 px-6 relative overflow-hidden">
+    <canvas id="skills-canvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+
+    <div class="relative z-10 max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <h2 class="text-4xl md:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                Compétences
+            </h2>
+            <p class="text-gray-400 text-lg">Hard skills &amp; soft skills qui me permettent de livrer des projets de qualité</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Hard Skills -->
+            <div class="p-8 bg-slate-900/75 backdrop-blur-sm border border-indigo-500/20 rounded-2xl reveal">
+                <h3 class="text-2xl font-bold text-indigo-400 mb-6 flex items-center gap-3">
+                    <span class="w-9 h-9 rounded-lg bg-indigo-500/20 flex items-center justify-center">⚙️</span>
+                    Hard Skills
+                </h3>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5 shrink-0">▸</span>Développement d'applications web full-stack responsive</li>
+                    <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5 shrink-0">▸</span>Authentification et gestion des utilisateurs</li>
+                    <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5 shrink-0">▸</span>Intégration de bases de données (MySQL, MongoDB)</li>
+                    <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5 shrink-0">▸</span>Intégration d'un CMS (WordPress / Elementor)</li>
+                    <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5 shrink-0">▸</span>API REST &amp; architecture logicielle</li>
+                </ul>
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="p-8 bg-slate-900/75 backdrop-blur-sm border border-purple-500/20 rounded-2xl reveal">
+                <h3 class="text-2xl font-bold text-purple-400 mb-6 flex items-center gap-3">
+                    <span class="w-9 h-9 rounded-lg bg-purple-500/20 flex items-center justify-center">🤝</span>
+                    Soft Skills
+                </h3>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 shrink-0">▸</span>Force de proposition &amp; initiative</li>
+                    <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 shrink-0">▸</span>Esprit d'équipe &amp; collaboration</li>
+                    <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 shrink-0">▸</span>Adaptabilité &amp; autonomie</li>
+                    <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 shrink-0">▸</span>Rigueur technique &amp; veille continue</li>
+                    <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 shrink-0">▸</span>Anglais courant</li>
+                </ul>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-            <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
+{# ════════════════════════════════════════════
+   PROJECTS — cards style screenshot 1
+════════════════════════════════════════════ #}
+<section id="projects" class="py-28 px-6 relative">
+    <div class="absolute inset-0 -z-10">
+        <div class="absolute bottom-0 -left-40 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <h2 class="text-4xl md:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                Projets Réalisés
+            </h2>
+            <p class="text-gray-400 text-lg">Quelques réalisations qui illustrent mon parcours</p>
         </div>
-    </section>
 
-    <!-- ===== STACK SECTION ===== -->
-    <section id="stack" class="py-32 px-6 relative">
-        <div class="absolute inset-0 overflow-hidden -z-10">
-            <div class="absolute top-1/2 -right-40 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
-        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
 
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Ma Stack Technologique</h2>
-                <p class="text-gray-400 text-lg max-w-2xl mx-auto">Les technologies et outils que j'utilise pour construire des solutions backend performantes et scalables</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-xl hover:border-indigo-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20 hover:-translate-y-1">
-                    <h3 class="text-xl font-bold text-indigo-400 mb-4">Backend</h3>
-                    <ul class="space-y-2 text-gray-300 text-sm">
-                        <li>✓ Symfony / Doctrine ORM</li>
-                        <li>✓ API REST / GraphQL</li>
-                        <li>✓ JWT Authentication</li>
-                    </ul>
+            {# Card 1 #}
+            <div class="p-6 bg-[#0f1117] border border-slate-800 rounded-2xl hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 reveal">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-11 h-11 rounded-xl bg-indigo-500/15 flex items-center justify-center text-xl shrink-0">🌐</div>
+                    <h3 class="text-lg font-bold text-white">Refonte SFSP</h3>
                 </div>
-
-                <div class="group p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-xl hover:border-indigo-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20 hover:-translate-y-1">
-                    <h3 class="text-xl font-bold text-indigo-400 mb-4">Bases de Données</h3>
-                    <ul class="space-y-2 text-gray-300 text-sm">
-                        <li>✓ PostgreSQL</li>
-                        <li>✓ MongoDB</li>
-                        <li>✓ Redis Cache</li>
-                    </ul>
-                </div>
-
-                <div class="group p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-xl hover:border-indigo-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20 hover:-translate-y-1">
-                    <h3 class="text-xl font-bold text-indigo-400 mb-4">DevOps & Tools</h3>
-                    <ul class="space-y-2 text-gray-300 text-sm">
-                        <li>✓ Docker & Compose</li>
-                        <li>✓ Git / GitHub</li>
-                        <li>✓ CI/CD Pipelines</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SKILLS SECTION ===== -->
-    <section id="skills" class="py-32 px-6 bg-slate-900/50">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Compétences Professionnelles</h2>
-                <p class="text-gray-400 text-lg">Hard skills et soft skills qui me permettent de livrer des projets de qualité</p>
+                <p class="text-gray-400 text-sm mb-5 leading-relaxed">
+                    Refonte complète du site de la Société Française de Santé Publique et du portail Revue Santé Publique.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="flex items-center gap-2"><span class="text-indigo-400">•</span>WordPress / PHP sur mesure</li>
+                    <li class="flex items-center gap-2"><span class="text-indigo-400">•</span>Conception UX &amp; maquettes</li>
+                    <li class="flex items-center gap-2"><span class="text-indigo-400">•</span>Architecture de l'information</li>
+                    <li class="flex items-center gap-2"><span class="text-indigo-400">•</span>Optimisation ergonomie &amp; SEO</li>
+                </ul>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="p-8 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 rounded-xl">
-                    <h3 class="text-2xl font-bold text-indigo-400 mb-6">Hard Skills</h3>
-                    <ul class="space-y-3 text-gray-300 text-sm">
-                        <li>• Architecture Backend & Design d'APIs scalables</li>
-                        <li>• SQL avancé et optimisation de requêtes</li>
-                        <li>• Authentication JWT, OAuth et CORS</li>
-                        <li>• Containerization & CI/CD pipelines</li>
-                        <li>• Unit et integration testing</li>
-                    </ul>
+            {# Card 2 #}
+            <div class="p-6 bg-[#0f1117] border border-slate-800 rounded-2xl hover:border-purple-500/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 reveal">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-11 h-11 rounded-xl bg-purple-500/15 flex items-center justify-center text-xl shrink-0">🏠</div>
+                    <h3 class="text-lg font-bold text-white">CommeMyhome</h3>
                 </div>
-
-                <div class="p-8 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 border border-purple-500/20 rounded-xl">
-                    <h3 class="text-2xl font-bold text-purple-400 mb-6">Soft Skills</h3>
-                    <ul class="space-y-3 text-gray-300 text-sm">
-                        <li>• Communication technique claire</li>
-                        <li>• Autonomie et résolution de problèmes</li>
-                        <li>• Rigueur technique et best practices</li>
-                        <li>• Travail en équipe agile</li>
-                        <li>• Veille tech et innovation continue</li>
-                    </ul>
-                </div>
+                <p class="text-gray-400 text-sm mb-5 leading-relaxed">
+                    Développement de la plateforme immobilière avec formulaire de contact et responsive design.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="flex items-center gap-2"><span class="text-purple-400">•</span>WordPress (Elementor) &amp; PHP</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400">•</span>Formulaire de contact PHP</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400">•</span>Responsive design</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400">•</span>Maintenance &amp; veille technique</li>
+                </ul>
             </div>
-        </div>
-    </section>
 
-    <!-- ===== PROJECTS SECTION ===== -->
-    <section id="projects" class="py-32 px-6 relative">
-        <div class="absolute inset-0 overflow-hidden -z-10">
-            <div class="absolute bottom-0 -left-40 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+            {# Card 3 #}
+            <div class="p-6 bg-[#0f1117] border border-slate-800 rounded-2xl hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 reveal">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-11 h-11 rounded-xl bg-indigo-500/15 flex items-center justify-center text-xl shrink-0">💻</div>
+                    <h3 class="text-lg font-bold text-white">Portfolio Fullstack</h3>
+                </div>
+                <p class="text-gray-400 text-sm mb-5 leading-relaxed">
+                    Portfolio développé avec Symfony 7, Twig, TailwindCSS v4 et animations canvas personnalisées.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="flex items-center gap-2"><span class="text-indigo-400">•</span>Symfony 7 / Twig</li>
+                    <li class="flex items-center gap-2"><span class="text-indigo-400">•</span>TailwindCSS v4</li>
+                    <li class="flex items-center gap-2"><span class="text-indigo-400">•</span>Animations canvas JS</li>
+                    <li class="flex items-center gap-2"><span class="text-indigo-400">•</span>AssetMapper</li>
+                </ul>
+            </div>
+
         </div>
 
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Projets Réalisés</h2>
-                <p class="text-gray-400 text-lg">Quelques projets qui démontrent mon expertise</p>
-            </div>
+        <!-- Bouton GitHub -->
+        <div class="flex justify-end reveal">
+            <a href="https://github.com/Ketchuskana" target="_blank"
+               class="flex items-center gap-2 px-6 py-3 border border-slate-600 rounded-lg text-gray-300
+                      hover:border-indigo-400 hover:text-indigo-400 transition-all duration-300 text-sm font-medium">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.51 11.51 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+                Voir mes projets sur GitHub
+            </a>
+        </div>
+    </div>
+</section>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group relative p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-xl hover:border-indigo-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20">
-                    <h3 class="text-lg font-bold text-white mb-2">API E-Commerce</h3>
-                    <p class="text-gray-400 text-sm mb-4">REST API complète avec gestion de produits et commandes</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full">Symfony</span>
-                        <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full">PostgreSQL</span>
+{# ════════════════════════════════════════════
+   CONTACT — split layout style screenshot 2
+════════════════════════════════════════════ #}
+<section id="contact" class="py-28 px-6 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto reveal">
+        <div class="relative rounded-3xl overflow-hidden border border-slate-800/60">
+            <!-- wave canvas background -->
+            <canvas id="contact-canvas" class="absolute inset-0 w-full h-full"></canvas>
+            <!-- gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-950/92 via-indigo-950/70 to-slate-900/92"></div>
+
+            <div class="relative z-10 grid md:grid-cols-2">
+
+                <!-- LEFT: big pitch text -->
+                <div class="p-10 md:p-14 flex flex-col justify-center">
+                    <h2 class="text-3xl md:text-4xl lg:text-[2.6rem] font-black leading-tight mb-6
+                               text-transparent bg-clip-text bg-gradient-to-br from-indigo-300 via-purple-300 to-indigo-400">
+                        Donnons vie à tes idées.<br>Transformons ta vision en réalité.
+                    </h2>
+                    <p class="text-gray-300 text-base leading-relaxed mb-8">
+                        Tu as un projet en tête ou tu veux simplement échanger ? Je suis disponible pour discuter de toute collaboration.
+                    </p>
+                    <div class="flex flex-col gap-3 text-sm text-gray-400">
+                        <div class="flex items-center gap-3">
+                            <span class="text-indigo-400 text-base">📧</span>
+                            <span>ketchuskanasonessomemoukouri@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-indigo-400 text-base">📍</span>
+                            <span>Île-de-France, France</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-indigo-400 text-base">📞</span>
+                            <span>07 67 86 31 19</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="group relative p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-xl hover:border-indigo-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20">
-                    <h3 class="text-lg font-bold text-white mb-2">Dashboard Analytics</h3>
-                    <p class="text-gray-400 text-sm mb-4">Monitoring et analytics avec Redis cache</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">Redis</span>
-                        <span class="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">Docker</span>
-                    </div>
-                </div>
-
-                <div class="group relative p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-xl hover:border-indigo-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20">
-                    <h3 class="text-lg font-bold text-white mb-2">Système File Upload</h3>
-                    <p class="text-gray-400 text-sm mb-4">Upload sécurisé avec compression optimisée</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full">Symfony</span>
-                        <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full">S3 Storage</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACT SECTION ===== -->
-    <section id="contact" class="py-32 px-6 relative bg-slate-900/50">
-        <div class="absolute inset-0 overflow-hidden -z-10">
-            <div class="absolute top-1/2 -right-40 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
-            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
-        </div>
-
-        <div class="max-w-3xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Prenons Contact</h2>
-                <p class="text-gray-400 text-lg">Vous avez un projet? Je serais ravi de discuter avec vous</p>
-            </div>
-
-            <div class="p-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-indigo-500/20 rounded-2xl">
-                <form class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
+                <!-- RIGHT: form -->
+                <div class="p-8 md:p-10 bg-slate-950/55 backdrop-blur-md border-l border-indigo-500/10">
+                    <form class="space-y-5">
                         <div>
-                            <label class="block text-sm font-semibold text-indigo-400 mb-2">Votre nom</label>
-                            <input type="text" placeholder="Jean Dupont" class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 text-white placeholder-gray-500">
+                            <label class="block text-sm font-semibold text-gray-300 mb-2">Nom</label>
+                            <input type="text" placeholder="Votre nom"
+                                   class="w-full px-4 py-3 bg-slate-800/60 border border-slate-700/60 rounded-lg
+                                          focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500/30
+                                          text-white placeholder-gray-600 text-sm">
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-indigo-400 mb-2">Votre email</label>
-                            <input type="email" placeholder="jean@example.com" class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 text-white placeholder-gray-500">
+                            <label class="block text-sm font-semibold text-gray-300 mb-2">Email</label>
+                            <input type="email" placeholder="contact@exemple.com"
+                                   class="w-full px-4 py-3 bg-slate-800/60 border border-slate-700/60 rounded-lg
+                                          focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500/30
+                                          text-white placeholder-gray-600 text-sm">
                         </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-indigo-400 mb-2">Sujet</label>
-                        <input type="text" placeholder="Projet web, consultation..." class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 text-white placeholder-gray-500">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-indigo-400 mb-2">Message</label>
-                        <textarea placeholder="Décrivez votre projet..." rows="6" class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 text-white placeholder-gray-500 resize-none"></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg font-bold text-white hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 hover:-translate-y-1">
-                        Envoyer le message
-                    </button>
-                </form>
-            </div>
-
-            <div class="mt-16 grid md:grid-cols-3 gap-8 text-center">
-                <div>
-                    <h3 class="font-semibold text-white mb-1">Email</h3>
-                    <p class="text-gray-400 text-sm">contact@example.com</p>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-300 mb-2">Message</label>
+                            <textarea placeholder="Votre message ici..." rows="5"
+                                      class="w-full px-4 py-3 bg-slate-800/60 border border-slate-700/60 rounded-lg
+                                             focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500/30
+                                             text-white placeholder-gray-600 text-sm resize-none"></textarea>
+                        </div>
+                        <button type="submit"
+                                class="w-full py-3 border border-white/20 rounded-lg font-semibold text-white
+                                       hover:bg-white/5 hover:border-indigo-400 hover:text-indigo-300
+                                       transition-all duration-300 text-sm tracking-wide">
+                            Envoyer
+                        </button>
+                    </form>
                 </div>
-                <div>
-                    <h3 class="font-semibold text-white mb-1">Localisation</h3>
-                    <p class="text-gray-400 text-sm">France</p>
-                </div>
-                <div>
-                    <h3 class="font-semibold text-white mb-1">Portfolio</h3>
-                    <p class="text-gray-400 text-sm">github.com/username</p>
-                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+{# ════════════════════════════════════════════
+   CANVAS ANIMATIONS (skills + contact waves)
+════════════════════════════════════════════ #}
+<script>
+(function () {
+    'use strict';
+
+    /* ── shared wave drawer ── */
+    function makeWave(canvasId, opts) {
+        const canvas = document.getElementById(canvasId);
+        if (!canvas) return;
+        const ctx  = canvas.getContext('2d');
+        let t      = 0;
+        let mx     = 0, my = 0;
+
+        function resize() {
+            canvas.width  = canvas.parentElement.offsetWidth  || window.innerWidth;
+            canvas.height = canvas.parentElement.offsetHeight || window.innerHeight;
+        }
+
+        canvas.parentElement.addEventListener('mousemove', function(e) {
+            const r = canvas.getBoundingClientRect();
+            mx = e.clientX - r.left;
+            my = e.clientY - r.top;
+        });
+
+        function draw() {
+            const W = canvas.width, H = canvas.height;
+            ctx.clearRect(0, 0, W, H);
+
+            for (let i = 0; i < opts.lines; i++) {
+                const prog  = i / opts.lines;
+                const baseY = H * (opts.yStart + prog * opts.ySpread);
+                const amp   = opts.ampBase + prog * opts.ampGrow + (my / (H || 1)) * opts.mouseAmp;
+                const freq  = opts.freqBase + i * opts.freqStep;
+                const phase = t * (opts.speed + i * opts.speedStep) + i * 0.6;
+                const mfx   = ((mx / (W || 1)) - 0.5) * opts.mouseFx;
+
+                ctx.beginPath();
+                ctx.moveTo(0, baseY);
+                for (let x = 0; x <= W; x += 4) {
+                    const y = baseY
+                        + Math.sin(x * freq + phase) * amp
+                        + Math.sin(x * freq * 1.8 - phase * 0.55) * (amp * 0.38)
+                        + mfx * Math.sin(x * 0.012 + phase * 0.5);
+                    ctx.lineTo(x, y);
+                }
+
+                const hue     = opts.hueBase + prog * opts.hueRange;
+                const opacity = opts.opBase  + prog * opts.opGrow;
+                ctx.strokeStyle = `hsla(${hue},70%,65%,${opacity})`;
+                ctx.lineWidth   = 1.4;
+                ctx.stroke();
+            }
+
+            t += opts.tick;
+            requestAnimationFrame(draw);
+        }
+
+        resize();
+        window.addEventListener('resize', resize);
+        draw();
+    }
+
+    /* ── Skills section (mariandev-style mesh) ── */
+    makeWave('skills-canvas', {
+        lines: 12, yStart: 0.05, ySpread: 0.92,
+        ampBase: 14, ampGrow: 7,  mouseAmp: 22,
+        freqBase: 0.006, freqStep: 0.0007,
+        speed: 0.18, speedStep: 0.025,
+        mouseFx: 28,
+        hueBase: 240, hueRange: 55,
+        opBase: 0.035, opGrow: 0.055,
+        tick: 0.009
+    });
+
+    /* ── Contact section ── */
+    makeWave('contact-canvas', {
+        lines: 9, yStart: 0.08, ySpread: 0.86,
+        ampBase: 18, ampGrow: 9,  mouseAmp: 0,
+        freqBase: 0.005, freqStep: 0.0009,
+        speed: 0.14, speedStep: 0.018,
+        mouseFx: 0,
+        hueBase: 248, hueRange: 40,
+        opBase: 0.04, opGrow: 0.04,
+        tick: 0.007
+    });
+})();
+</script>
+
 {% endblock %}
